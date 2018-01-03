@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.science.exchange</groupId>
+  <artifactId>exchange</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>exchange</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <repositories>
+  	<repository>
+  		<id>jitpack.io</id>
+  		<url>https://jitpack.io</url>
+  	</repository>
+  </repositories>
+
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/com.webcerebrium/binance-api -->
+	<dependency>
+		<groupId>com.webcerebrium</groupId>
+		<artifactId>binance-api</artifactId>
+		<version>1.0.5</version>
+	</dependency>
+   
+  	<!-- Twilio -->
+  	<dependency>
+		<groupId>com.twilio.sdk</groupId>
+		<artifactId>twilio</artifactId>
+		<version>(7.11.0,7.12.0]</version>
+	</dependency>
+  	
+  
+  	<!-- https://github.com/Ullink/simple-slack-api/tree/master/sources/src/main/java/com/ullink/slack/simpleslackapi -->
+   	<dependency>
+  		<groupId>com.github.Ullink</groupId>
+  		<artifactId>simple-slack-api</artifactId>
+  		<version>1.2.0</version>
+  	</dependency>
+  
+  	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.3</version>
+	</dependency>
+	
+	<!-- https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	    <version>2.10.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-core</artifactId>
+		<version>2.10.0</version>
+	</dependency>
+	
+    <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>3.8.1</version>
+	    <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

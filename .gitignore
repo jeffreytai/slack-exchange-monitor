@@ -1,0 +1,4 @@
+*.txt
+*.properties
+/target
+/.settings
