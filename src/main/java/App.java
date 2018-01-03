@@ -1,10 +1,8 @@
 import java.util.Map;
 
-import com.science.exchange.Binance;
 import com.science.exchange.Bittrex;
 import com.science.exchange.Exchange;
 import com.science.slack.listeners.ExchangeMessageListener;
-import com.science.twilio.TwilioProcessor;
 import com.science.utils.Constants;
 import com.science.utils.Utils;
 import com.ullink.slack.simpleslackapi.SlackSession;
@@ -15,31 +13,24 @@ public class App
 {
     public static void main(String[] args)
     {   		
-    		TwilioProcessor tp = TwilioProcessor.getInstance(true);
-    		
     	
     		Exchange wrapper = new Bittrex();
     		String str = wrapper.getCurrencies();
-    		System.out.println(str);
     		
-//    	Map<String, String> kvMap = Utils.parseKeyFile(Constants.KEY_FILE_PATH + Constants.SLACK_KEY_FILE);
-//		String botAccessToken = kvMap.get(Constants.SLACK_KEY_NAME);
-//		SlackSession session = SlackSessionFactory.createWebSocketSlackSession(botAccessToken);
-//		try {
-//	    		session.connect();
-//	    		
-//	    		SlackMessagePostedListener listener = new ExchangeMessageListener();
-//	    		session.addMessagePostedListener(listener);
-//		}
-//		catch (Exception ex) {
-//			System.out.println("Error with connection");
-//		}
+    		Map<String, String> kvMap = Utils.parseKeyFile(Constants.KEY_FILE_PATH + Constants.SLACK_KEY_FILE);
+		String botAccessToken = kvMap.get(Constants.SLACK_KEY_NAME);
+		SlackSession session = SlackSessionFactory.createWebSocketSlackSession(botAccessToken);
+		try {
+	    		session.connect();
+	    		
+	    		SlackMessagePostedListener listener = new ExchangeMessageListener();
+	    		session.addMessagePostedListener(listener);
+		}
+		catch (Exception ex) {
+			System.out.println("Error with connection");
+		}
 		
     		
-		
-		
-		
-		
 //    		Bittrex wrapper = new Bittrex();
 //    		wrapper.setAuthKeysFromTextFile(Constants.KEY_FILE_PATH + wrapper.BITTREX_KEY_FILE);
 //        
